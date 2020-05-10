@@ -1,14 +1,14 @@
-const bubbleSort = originalArray => {
-    let arr = [...originalArray];
-
-    for(let i = 0; i < arr.length; i++){
-        for(let j = 0; j < arr.length-i; j++){
-            if(arr[j] > arr[j+1]){
-                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
+const selectionSort = originalArray => {
+    const arr = [...originalArray];
+    for(let i = 0; i < arr.length-1; i++){
+        let minIndex = i;
+        for(let j = i+1; j < arr.length; j++){
+            if(arr[minIndex] > arr[j]){
+                minIndex = j;
             }
         }
+        [arr[i],arr[minIndex]] = [arr[minIndex],arr[i]];
     }
-
     return arr;
 }
 
@@ -18,4 +18,4 @@ const bubbleSort = originalArray => {
 // const arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
  const arr = [-1, 0, 5, -10, 20, 13, -7, 3, 2, -3];
 // const arr = [-10, -7, -3, -1, 0, 2, 3, 5, 13, 20];
-console.log(bubbleSort(arr))
+console.log(selectionSort(arr));

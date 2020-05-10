@@ -1,11 +1,11 @@
-const bubbleSort = originalArray => {
-    let arr = [...originalArray];
+const insertionSort = originalArray => {
+    const arr = [...originalArray];
 
-    for(let i = 0; i < arr.length; i++){
-        for(let j = 0; j < arr.length-i; j++){
-            if(arr[j] > arr[j+1]){
-                [arr[j], arr[j+1]] = [arr[j+1], arr[j]]
-            }
+    for(let i = 1; i < arr.length; i++){
+        let j = i;
+        while(arr[j] < arr[j-1] && j > 0){
+            [arr[j-1],arr[j]] = [arr[j],arr[j-1]];
+            j--;
         }
     }
 
@@ -18,4 +18,4 @@ const bubbleSort = originalArray => {
 // const arr = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
  const arr = [-1, 0, 5, -10, 20, 13, -7, 3, 2, -3];
 // const arr = [-10, -7, -3, -1, 0, 2, 3, 5, 13, 20];
-console.log(bubbleSort(arr))
+console.log(insertionSort(arr));
