@@ -1,5 +1,3 @@
-// Calculate fibonacci number at Nth position using Recursion
-
 const fibonacci = n => {
     if (n<2){
         return n;
